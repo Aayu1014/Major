@@ -1,45 +1,56 @@
-import React from "react";
-import styles from "./Header.module.css"; // Import the CSS module
+// src/components/Header.jsx
+import React, { useState } from "react";
+import styles from "./Header.module.css";
+import ContactForm from "./Contactform";
 
-function Header() {
+const Header = () => {
+  const [isFormVisible, setFormVisible] = useState(false);
+
+  // Toggle the form visibility on each click
+  const handleContactClick = () => {
+    setFormVisible((prevState) => !prevState); // Toggle between true and false
+  };
+
   return (
-    <header className={styles.header}>
-      {/* Left section: Logo */}
-      <div className={styles.logo}>
-        <h1>KANMAN</h1>
-      </div>
+    <>
+      <header className={styles.header}>
+        <div className={styles.logo}>MyWebsite</div>
+        <nav className={styles.nav}>
+          <ul className={styles.navList}>
+            <li className={styles.navItem}>
+              <a href="#home" className={styles.navLink}>
+                Home
+              </a>
+            </li>
+            <li className={styles.navItem}>
+              <a href="#about" className={styles.navLink}>
+                About
+              </a>
+            </li>
+            <li className={styles.navItem}>
+              <a href="#services" className={styles.navLink}>
+                Services
+              </a>
+            </li>
+            <li className={styles.navItem}>
+              <a
+                href="#contact"
+                className={styles.navLink}
+                onClick={handleContactClick}
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-      {/* Center section: Navigation links */}
-      <div className={styles.nav}>
-        <ul className={styles.navList}>
-          <li className={styles.navItem}>
-            <a href="#home" className={styles.navLink}>
-              Home
-            </a>
-          </li>
-          <li className={styles.navItem}>
-            <a href="#about" className={styles.navLink}>
-              About
-            </a>
-          </li>
-          <li className={styles.navItem}>
-            <a href="#contact" className={styles.navLink}>
-              Contact
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      {/* Right section: User profile */}
-      <div className={styles.profile}>
-        <img
-          src="/src/assets/profile.jpg"
-          alt="User Avatar"
-          className={styles.avatar}
-        />
-      </div>
-    </header>
+      <ContactForm
+        isVisible={isFormVisible}
+        onClose={() => setFormVisible(false)}
+      />
+    </>
   );
-}
+};
 
 export default Header;
