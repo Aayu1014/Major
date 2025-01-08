@@ -1,0 +1,85 @@
+/* Header.module.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;  /* Reduced padding to make the header shorter */
+  background: linear-gradient(135deg, #4a90e2, #1e3c72); /* Gradient background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+  height: 50px; /* You can set a specific height if needed */
+}
+
+.header:hover {
+  background: linear-gradient(135deg, #6ab7ff, #2a4d8e); /* Lighter gradient on hover */
+}
+
+.logo {
+  font-size: 20px; /* Smaller font size for a more compact header */
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #03a9f4;
+}
+
+.nav {
+  flex: 1;
+  text-align: center;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Reduced gap between nav items */
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px; /* Reduced font size */
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 12px; /* Reduced padding */
+  border-radius: 30px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.navLink:hover {
+  background-color: #03a9f4;
+  color: #1e1e1e;
+  transform: translateY(-3px);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 40px; /* Reduced width */
+  height: 40px; /* Reduced height */
+  object-fit: cover;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.profile:hover .avatar {
+  transform: scale(1.1);
+}

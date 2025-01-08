@@ -1,9 +1,11 @@
 import React from "react";
+import Header from "./components/Header"; // Make sure the path is correct
 
 function App() {
   return (
     <div>
-      <h1>Welcome to React!</h1>
+      <Header />
+      {/* Other app content */}
     </div>
   );
 }
