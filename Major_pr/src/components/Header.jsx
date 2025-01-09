@@ -1,15 +1,14 @@
-// src/components/Header.jsx
 import React, { useState } from "react";
 import styles from "./Header.module.css";
 import ContactForm from "./ContactForm";
 import DropdownMenu from "./DropdownMenu";
+import User from "./User";
 
 const Header = () => {
   const [isFormVisible, setFormVisible] = useState(false);
 
-  // Toggle the form visibility on each click
   const handleContactClick = () => {
-    setFormVisible((prevState) => !prevState); // Toggle between true and false
+    setFormVisible((prevState) => !prevState);
   };
 
   return (
@@ -49,6 +48,9 @@ const Header = () => {
             </li>
           </ul>
         </nav>
+        <div className={styles.userProfile}>
+          <User />
+        </div>
       </header>
 
       <ContactForm
