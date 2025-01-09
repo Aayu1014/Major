@@ -83,3 +83,9 @@
 .profile:hover .avatar {
   transform: scale(1.1);
 }
+.userProfile {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
