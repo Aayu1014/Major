@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Welcome.css";
+import styles from "./Welcome.module.css"; // Import the CSS module
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -12,16 +12,26 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="form-container">
+    <div className={styles.formContainer}>
       <h2>Welcome Back!</h2>
-      <form onSubmit={handleSubmit} className="login-form">
+
+      {/* Add login image here */}
+      <div className={styles.loginImageContainer}>
+        <img
+          src="/src/assets/login.png" // Provide the path to your login image
+          alt="Login"
+          className={styles.loginImage}
+        />
+      </div>
+
+      <form onSubmit={handleSubmit} className={styles.loginForm}>
         <input
           type="email"
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="input-field"
+          className={styles.inputField}
         />
         <input
           type="password"
@@ -29,9 +39,9 @@ const LoginForm = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="input-field"
+          className={styles.inputField}
         />
-        <button type="submit" className="submit-button">
+        <button type="submit" className={styles.submitButton}>
           Submit
         </button>
       </form>
