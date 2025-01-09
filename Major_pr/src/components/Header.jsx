@@ -1,7 +1,8 @@
 // src/components/Header.jsx
 import React, { useState } from "react";
 import styles from "./Header.module.css";
-import ContactForm from "./Contactform";
+import ContactForm from "./ContactForm";
+import DropdownMenu from "./DropdownMenu";
 
 const Header = () => {
   const [isFormVisible, setFormVisible] = useState(false);
@@ -28,9 +29,14 @@ const Header = () => {
               </a>
             </li>
             <li className={styles.navItem}>
-              <a href="#services" className={styles.navLink}>
-                Services
-              </a>
+              <DropdownMenu
+                label="SERVICES"
+                items={[
+                  { name: "Service 1", link: "#service1" },
+                  { name: "Service 2", link: "#service2" },
+                  { name: "Service 3", link: "#service3" },
+                ]}
+              />
             </li>
             <li className={styles.navItem}>
               <a
